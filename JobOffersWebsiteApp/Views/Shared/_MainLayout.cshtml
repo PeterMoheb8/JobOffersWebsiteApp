@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width , initial scale=1" />
+    <title>@ViewBag.Title</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <a href="#" class="navbar-brand"></a>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li class="">
+                                <a href="~/Home">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    الرئيسية
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="glyphicon glyphicon-folder-open"></i>اصناف العروض
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-globe"></i>
+                                    حول الموقع
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-envelope"></i>اتصل بنا
+                                </a>
+                            </li>
+
+                            <li>
+                                @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                                {
+                                    <input type="search" name="searchName" placeholder="ابحث" />
+                                }
+
+
+
+
+                            </li>
+                        </ul>
+
+
+
+
+
+                        @Html.Partial("_Login")
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+
+        <div class="row" style="margin-bottom:270px;">
+
+
+
+            @RenderBody()
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>
+                        <i class="glyphicon glyphicon-question-sign"></i>
+                        من نحن ؟
+
+                    </h6>
+                    <p class="text-justify">
+
+                        ” تدوينة أو مقالًا، ولا وجهة نظرك أو وجهة نظر قسم التسويق، أو أن تكون تلك القصة التي تحكيها في الصفحة مملة، تدفع الزوار لإغلاق الصفحة ومغادرة الموقع، فقط أخبرهم باللغة التي يفهمونها كيف حدث وأصبحت ما أنت عليه الآن، ما الذي تفعله وكيف تفعله، ولماذا ينبغي عليهم أن يشتروا منك، ومن هؤلاء الأشخاص الذين يقفون معك خلف كواليس الشركة.
+                    </p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>
+                        <i class="glyphicon glyphicon-envelope"></i>
+                        تواصل معنا
+
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/category/c-language/"></a></li>
+                        <li><a href="http://scanfcode.com/category/front-end-development/">صفحتنا علي الفيس بوك</a></li>
+                        <li><a href="http://scanfcode.com/category/back-end-development/">تابعنا علي تويتر</a></li>
+                        <li><a href="http://scanfcode.com/category/java-programming-language/">شاهدنا علي يوتيوب</a></li>
+                        <li><a href="http://scanfcode.com/category/android/">اترك لنا رساله</a></li>
+                        <li><a href="http://scanfcode.com/category/templates/"></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+
+                    <h6>
+                        <i class="glyphicon glyphicon-link"></i>
+                        روابط هامة
+
+                    </h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/about/">وظائف القطاع العام</a></li>
+                        <li><a href="http://scanfcode.com/contact/">وظائف القطاع الخاص</a></li>
+                        <li><a href="http://scanfcode.com/contribute-at-scanfcode/"></a></li>
+                        <li><a href="http://scanfcode.com/privacy-policy/">وظائف متنوعه </a></li>
+                        <li><a href="http://scanfcode.com/sitemap/"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">
+                        جميع الحقوق محفوظه لموقع التوظيف   - 2022
+                        <a href="#">وظائف</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@model JobOffersWebsiteApp.Models.Category
+
+@{
+    ViewBag.Title = "التفاصيل";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>قائمة التفاصيل</h2>
+
+<div>
+    <h4 class="alert alert-success">عرض تفاصيل الوظائف</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryDeccriptions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryDeccriptions)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("التعديل", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("العودة الي القائمه الرئيسية  ", "Index")
+</p>

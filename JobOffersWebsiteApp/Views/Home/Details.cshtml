@@ -1,0 +1,55 @@
+﻿@model JobOffersWebsiteApp.Models.Job
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2 class="alert alert-info">تفاصيل الوظيفة</h2>
+
+<div>
+    <h4 class="alert alert-warning">التفاصيل </h4>
+    <hr />
+    <dl class="dl-horizontal" >
+        <dt class="alert alert-info">
+
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd class="alert alert-success" style="width:100px;height:55px">
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt  class="alert alert-info">
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd  class="alert alert-success" style="width:100px;height:55px">
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt  class="alert alert-info">
+            @Html.DisplayNameFor(model => model.JobContent)
+        </dt>
+
+        <dd  class="alert alert-success" style="width:130px;height:55px">
+            @Html.DisplayFor(model => model.JobContent)
+        </dd>
+
+        <dt  class="alert alert-info">
+            @Html.DisplayNameFor(model => model.JobImage)
+        </dt>
+
+
+        <dd>
+            <img src="~/Uploads/@Html.DisplayFor(model => model.JobImage)"
+                 class="thumbnail" style="width:300px; height:300px;" />
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("التقدم علي هذة الوظيفة", "Apply", new { id = Model.Id } , new {@class = "btn btn-primary" } ) 
+    @Html.ActionLink("العودة الي القائمة الرئيسية  ", "Index" , new { @class = "btn btn-default" })
+</p>

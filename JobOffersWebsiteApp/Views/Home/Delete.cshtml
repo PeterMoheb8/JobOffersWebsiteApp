@@ -1,0 +1,51 @@
+﻿@model JobOffersWebsiteApp.Models.ApplyForJob
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حذف</h2>
+
+<h3 class="alert alert-danger">      هل انت متاكد من حذف هذة البيانات ؟</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.JobTitle)
+        </dd>
+
+        <dt>
+          نص الرسالة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meesage)
+        </dd>
+
+        <dt>
+            تاريخ الارسال
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplayDate)
+        </dd>
+
+  
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger" /> |
+            @Html.ActionLink(" العودة الي القائمة السابقة ", "GetJobsByUser")
+        </div>
+    }
+</div>
